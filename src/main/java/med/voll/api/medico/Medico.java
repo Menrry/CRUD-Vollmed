@@ -20,7 +20,7 @@ public class Medico {
     private String email;
     private  String telefono;
     private String documento;
-    //private Boolean activo;
+    private Boolean activo;
     @Enumerated(EnumType.STRING)
     private Especialidad especialidad;
     @Embedded
@@ -49,7 +49,7 @@ public class Medico {
         }
     }
 
-   // public void desactivarMedico() {
-   //     this.activo = false;
-    //}
+    public void desactivarMedico() {
+       this.activo = false;
+    }
 }

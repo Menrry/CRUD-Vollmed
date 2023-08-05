@@ -30,9 +30,11 @@ public class MedicoController {
 
     @GetMapping                                                           // Aquí le digo que envíe 2 datos
     public Page<DatosListadoMedico> listadoMedicos(@PageableDefault(size = 2) Pageable paginacion){  // para prabajar con paginas
+//Aplicando el delete Lógico
+        return medicoRepository.findByActivoTrue(paginacion).map(DatosListadoMedico::new);//Aplicando del Delete lógico
 
-        //return medicoRepository.findByActivoTrue(paginacion).map(DatosListadoMedico::new);//Aplicando del Delete lógico
-        return medicoRepository.findAll(paginacion).map(DatosListadoMedico::new); //antes del Delete lógico
+
+       // return medicoRepository.findAll(paginacion).map(DatosListadoMedico::new); //antes del Delete lógico
 
        //return medicoRepository.findAll();  // retorna toda la entidad
     }
@@ -44,15 +46,15 @@ public class MedicoController {
         medico.actualizarDatos(datosActualizarMedico);
     }
 // Delete Lógico
-    /*
+
     @DeleteMapping("/{id}")
     @Transactional
     public void eliminarMedico(@PathVariable Long id){
         Medico medico = medicoRepository.getReferenceById(id);
         medico.desactivarMedico();
     }
-*/
 
+/*
      // Delete en Base de datos
      @DeleteMapping("/{id}")
      @Transactional
@@ -60,6 +62,6 @@ public class MedicoController {
         Medico medico = medicoRepository.getReferenceById(id);
         medicoRepository.delete(medico);
     }
-
+*/
 
 }

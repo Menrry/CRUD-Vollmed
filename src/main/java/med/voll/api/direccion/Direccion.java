@@ -33,4 +33,22 @@ public class Direccion {
         this.ciudad = direccion.ciudad();
         return this;
     }
+
+    public void atualizarInformacion(DatosDireccion direccion) {
+        if (direccion.calle() != null){
+            this.calle = direccion.calle();
+        }
+        if (direccion.numero() != null){
+            this.numero = direccion.numero();
+        }
+        if (direccion.distrito() != null){
+            this.distrito = direccion.distrito();
+        }
+        if (direccion.complemento() != null){
+            this.complemento = direccion.complemento();
+        }
+        if (direccion.ciudad() != null){
+            this.ciudad = direccion.ciudad();
+        }
+    }
 }

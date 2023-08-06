@@ -23,7 +23,7 @@ public class MedicoController {
         medicoRepository.save(new Medico(datosRegistroMedico));
     }
 
-/*
+
 
     //public List<DatosListadoMedico> listadoMedicos(){  // al trabajar con listas
     //return medicoRepository.findAll().stream().map(DatosListadoMedico::new).toList();
@@ -53,7 +53,7 @@ public class MedicoController {
         Medico medico = medicoRepository.getReferenceById(id);
         medico.desactivarMedico();
     }
- */
+
 
 
 

@@ -42,4 +42,6 @@ public class PacienteController {
         Paciente paciente = pacienteRepository.getReferenceById(id);
         paciente.desactivarPaciente();
     }
+
+
 }

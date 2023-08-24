@@ -34,7 +34,7 @@ public class SecurityConfigurations {
                 .build();
 
         /* Este filtro estaba bloqueando
-        todo mi request ya que no tiene como validar la lógica
+         mi request ya que no tiene como validar la lógica
         usada en SecurityFilter. Por lo tanto debo aquegar mi filtro primero, antes que este otro:
                 .requestMatchers(HttpMethod.POST, "/login")
                 .permitAll()

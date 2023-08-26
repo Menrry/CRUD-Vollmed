@@ -3,6 +3,7 @@ package med.voll.api.domain.consulta.validaciones;
 import jakarta.validation.ValidationException;
 import med.voll.api.domain.consulta.ConsultaRepository;
 import med.voll.api.domain.consulta.DatosAgendarConsulta;
+import med.voll.api.domain.consulta.DatosCancelacionDeConsulta;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -11,14 +12,22 @@ public class MedicoConConsulta implements ValidadorDeConsultas {
 
     @Autowired
     private ConsultaRepository repository;
+
+
     public void validar(DatosAgendarConsulta datos){
+
         if(datos.idMedico()==null){
-            return;
+            return; // no debe retornar nada
         }
         var medicoConConsulta = repository.existsByMedicoIdAndData(datos.idMedico(), datos.data());
+       // var consultaHabil = repository.findMotivoById(datos.idMedico());
+        //System.out.println("El valor de motivo es:" + consultaHabil);
 
         if(medicoConConsulta){
+
             throw new ValidationException("Este médico ya tiene una consulta en ese horario");
         }
     }
+
+
 }

@@ -21,7 +21,7 @@ public class TratadorDeErrores {     //Sí solicito info con un Id que no existe
         return ResponseEntity.badRequest().body(errores);
     }
     @ExceptionHandler(ValidacionDeIntegridad.class)
-    public ResponseEntity errorHandlerValidacionesDeIntegridad(Exception e){
+    public ResponseEntity errorHandlerValidacionesIntegridad(Exception e){
         return ResponseEntity.badRequest().body(e.getMessage());
     }
 
@@ -33,6 +33,7 @@ public class TratadorDeErrores {     //Sí solicito info con un Id que no existe
     private record DatosErrorValidacion(String campo, String error){
 
         public DatosErrorValidacion(FieldError error){
+
             this(error.getField(), error.getDefaultMessage());
         }
     }

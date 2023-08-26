@@ -18,7 +18,7 @@ public class PacienteSinConsulta implements ValidadorDeConsultas {
         var pacienteConConsulta = repository.existsByPacienteIdAndDataBetween(datos.idPaciente(), primerHorario, ultimoHorario);
 
         if(pacienteConConsulta){
-            throw new ValidationException("No se permite programar más de una consulta en el mismo día para el mismo paciente");
+            throw new ValidationException("el paciente ya tiene una consulta para ese dia");
         }
     }
 }

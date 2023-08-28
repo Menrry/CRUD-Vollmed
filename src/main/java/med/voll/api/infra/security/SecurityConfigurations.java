@@ -27,6 +27,8 @@ public class SecurityConfigurations {
                 .and().authorizeRequests()
                 .requestMatchers(HttpMethod.POST, "/login")
                 .permitAll()
+                .requestMatchers("/swagger-ui.html", "/v3/api-docs/**", "/swagger-ui/**")
+                .permitAll()
                 .anyRequest()
                 .authenticated()
                 .and()
@@ -34,7 +36,7 @@ public class SecurityConfigurations {
                 .build();
 
         /* Este filtro estaba bloqueando
-        todo mi request ya que no tiene como validar la lógica
+         mi request ya que no tiene como validar la lógica
         usada en SecurityFilter. Por lo tanto debo aquegar mi filtro primero, antes que este otro:
                 .requestMatchers(HttpMethod.POST, "/login")
                 .permitAll()

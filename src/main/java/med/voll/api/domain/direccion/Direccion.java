@@ -33,7 +33,7 @@ public class Direccion {
         return this;
     }
 
-    public void atualizarInformacion(DatosDireccion direccion) {
+    public void actualizarDireccion(DatosDireccion direccion) {
         if (direccion.calle() != null){
             this.calle = direccion.calle();
         }

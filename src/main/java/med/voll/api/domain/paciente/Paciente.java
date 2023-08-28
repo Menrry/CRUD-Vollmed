@@ -42,18 +42,18 @@ public class Paciente{
         this.activo = false;
     }
 
-    public void actualizarDatos(DatosActualizarPaciente datosActualizarPaciente) {
-        if (datosActualizarPaciente.nombre() != null){
-            this.nombre = datosActualizarPaciente.nombre();
+    public void actualizarDatos(DatosActualizarPaciente datos) {
+        if (datos.nombre() != null){
+            this.nombre = datos.nombre();
         }
-        if (datosActualizarPaciente.telefono() != null){
-            this.telefono = datosActualizarPaciente.telefono();
+        if (datos.telefono() != null){
+            this.telefono = datos.telefono();
         }
-        if (datosActualizarPaciente.email() != null){
-            this.email = datosActualizarPaciente.email();
+        if (datos.email() != null){
+            this.email = datos.email();
         }
-        if (datosActualizarPaciente.direccion() != null){
-            direccion.atualizarInformacion(datosActualizarPaciente.direccion());
+        if (datos.direccion() != null){
+            direccion.actualizarDireccion(datos.direccion());
         }
 
     }
